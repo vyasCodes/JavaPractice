@@ -1,6 +1,7 @@
 package org.example.OOPs.OOP2;
 
-import OOPs.OOP1.*;
+
+import org.example.OOPs.OOP1.Car;
 
 public class AccessCar {
     public static void main(String[] args) {
