@@ -80,6 +80,7 @@ public class Client {
         s4.add(1);
         s4.add(22);
         s4.add(3);
+        s4.add(3);
         s4.add(4);
         System.out.println(s4);
 
@@ -97,7 +98,7 @@ public class Client {
 
         Queue<String> names = new PriorityQueue<>(new Comparator<String>() {
             public int compare(String o1, String o2) {
-                return o2 .compareTo(o1);
+                return o2.compareTo(o1);
             }
         });
         names.add("Karan");
@@ -105,6 +106,32 @@ public class Client {
         names.add("Swati");
         names.add("Shrusti");
         System.out.println(names);
+
+        System.out.println("----------------Comparator & Comparable----------------");
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Karan", 85, "IGNOU"));
+        students.add(new Student("Umang", 90, "ABS"));
+        students.add(new Student("Swati", 80, "IGNOU"));
+        students.add(new Student("Jyoti", 85, "Xavier"));
+        students.add(new Student("Shrusti", 70, "Ram"));
+
+        for (Student student : students) {
+            System.out.println("Student: " + student.name + " PSP: " + student.psp);
+        }
+
+        System.out.println("-----Sorted using comparable--------");
+
+        Collections.sort(students);
+        for (Student student : students) {
+            System.out.println("Student: " + student.name + " PSP: " + student.psp);
+        }
+
+        System.out.println("-----Sorted using comparator--------");
+        Collections.sort(students, new UniversityNameComparator());
+        for (Student student : students) {
+            System.out.println("Student: " + student.name + " PSP: " + student.psp +
+                    " University: " + student.UnivName);
+        }
 
     }
 }
